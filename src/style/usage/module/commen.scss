@@ -5,6 +5,41 @@
 .yo-modal{
     background-color:#fff!important;
 }
+.yo-modal{
+    background-color:rgba(105,105,105,0.5) !important;
+    .cont{
+                background:#e8e8ea !important;
+                 .mo-user{
+                    display:block;
+                   height:.31rem;
+                   width:60%;
+                    margin:0 auto;
+                    border:0 none;
+                    border-bottom:1px solid #000;
+                    padding-left:.2rem;
+                    margin-top:.4rem;
+                }
+                .mo-pass{
+                    display:block;
+                   height:.31rem;
+                   width:60%;
+                    margin:0 auto;
+                    border:0 none;
+                     padding-left:.2rem;
+                }
+                .mo-registor{
+                    height:.31rem;
+                   width:60%;
+                   display:block; 
+                   margin:0 auto;
+                   margin-top:.2rem;
+                   background:#383a3c;
+                   border:0 none;
+                   color:#fff;
+                }
+        }       
+}
+
 .text{
     display: block;
 }

@@ -82,7 +82,8 @@
                     span{
                         @include flex(); 
                         width:100%;  
-                        text-align: center; 
+                        text-align: center;
+                        display:block; 
                         margin-top:0.06rem;
                         color:#d79944;
                     }

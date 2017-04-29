@@ -27,7 +27,7 @@ export default class TwoColumn extends Component{
 	render(){
 		return (
 			<div className="product_tao">
-				<PubHeader title={this.props.title} />
+				<PubHeader title={this.props.title} idValue={this.props.typeId}/>
 				<div className="product_list">
 					{this.getDataLine(this.state.storeDataList)}
 				</div>

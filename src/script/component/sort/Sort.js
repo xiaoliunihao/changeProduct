@@ -10,7 +10,8 @@ export default class Sort extends Component{
 			currPage:1,
 			newFirstData:[],
 			TypeIdData:[],
-			TypeId:1
+			TypeId:1,
+			selectValue:true
 		}
 	}
 	componentWillMount(){
@@ -21,7 +22,8 @@ export default class Sort extends Component{
 	getTyidValue(data){
 		this.setState({
 			currPage:1,
-			TypeId:data.TypeId
+			TypeId:data.TypeId,
+			selectValue:true
 		})
 		fetch("/sortdata/products/category/ajaxselect?id="+data.TypeId+"&currPage=1")
 		.then((response)=>response.json())
@@ -47,7 +49,12 @@ export default class Sort extends Component{
 				scrollY={true}
 				useLoadMore={true}
 	            onLoad={()=>{
-	              	var TypeId=localStorage.getItem("TypeId");
+	            	var TypeId;
+	            	if(this.props.location.query.TypeId!=undefined){
+						TypeId=this.props.location.query.TypeId;
+					}else{
+						TypeId=localStorage.getItem("TypeId");
+					}
 	              	this.state.currPage++;
 		            fetch("/sortdata/products/category/ajaxselect?id="+TypeId+"&currPage="+this.state.currPage)
 		                .then((response)=>response.json())
@@ -59,18 +66,25 @@ export default class Sort extends Component{
 		                    this.refs.scroller.stopLoading(true);
 		                } else {
 		                    this.refs.scroller.resetLoadStatus(false);
-		                }
+		                    this.refs.scroller.resetLoadStatus(true)
+		                     
+		                }    
 		            })
 	            }}
 				>
-					<TopLine onFatherLi={this.getTyidValue.bind(this)}/>
+					<TopLine queryId={this.props.location.query.TypeId!="undefined"?this.props.location.query.TypeId:1} onFatherLi={this.getTyidValue.bind(this)}/>
 					<Sort_List TypeIdData={this.state.TypeIdData} />
 				</Scroller>
 			</div>
 		)
 	}
 	componentDidMount(){
-		fetch("/sortdata/products/category/ajaxselect?id=1&currPage=1")
+		if(this.props.location.query.TypeId!=undefined){
+			var TypeId=this.props.location.query.TypeId;
+		}else{
+			var TypeId=1;
+		}
+		fetch("/sortdata/products/category/ajaxselect?id="+TypeId+"&currPage=1")
 		.then((response)=>response.json())
 		.then((res)=>{
 			this.setState({

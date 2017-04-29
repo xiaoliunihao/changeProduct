@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import {Link} from "react-router";
 export default class PubHeader extends Component{
 	render(){
 		return(
@@ -15,10 +16,10 @@ export default class PubHeader extends Component{
 						</div>
 					</div>
 					<div className="right_btn">
-						<a>
+						<Link to={`/sort/?TypeId=${this.props.idValue}`}>
 							<div>更多</div>
 							<div className="yo-ico">&#xf0343;</div>
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

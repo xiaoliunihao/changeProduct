@@ -18,6 +18,7 @@ export default class Content extends Component{
 		loading.show({
 			text:"小匠正在加载中..."
 		})
+		
 	}
 	render(){
 		return(
@@ -32,7 +33,7 @@ export default class Content extends Component{
 					if(this.state.datalist.length==0){
 						this.setState({
 							datalist:[
-							<TwoColumn title="推荐·衬衣" typeId="1"/>,
+							<TwoColumn title="推荐·套西" typeId="1"/>,
 							<TwoColumn title="推荐·裤装" typeId="3"/>,
 							<TwoColumn title="推荐·马甲" typeId="5"/>,
 							<TwoColumn title="推荐·羊绒衫" typeId="9"/>,
@@ -49,8 +50,8 @@ export default class Content extends Component{
 					<Banner />
 					<Store_line />
 					<TwoBox />
-					<StoreTwo uri="tao_img_src" title="推荐·套西" />
-					<StoreTwo uri="dayi_img_src" title="推荐·大衣" />
+					<StoreTwo uri="tao_img_src" title="推荐·套西" typeId="1"/>
+					<StoreTwo uri="dayi_img_src" title="推荐·大衣" typeId="4"/>
 					{this.state.datalist}
 				</Scroller>
 			</div>

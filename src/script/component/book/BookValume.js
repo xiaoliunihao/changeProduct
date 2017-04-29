@@ -26,7 +26,6 @@ export default class BookValume extends Component{
 		})
 	}
 	render(){
-		console.log(this)
 		return(
 			<div className="book_contain">
 				<div className="book_header">

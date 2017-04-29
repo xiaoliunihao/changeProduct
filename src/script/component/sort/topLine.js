@@ -5,8 +5,17 @@ localStorage.setItem("TypeId",1);
 export default class TopLine extends Component{
 	constructor(props){
 		super(props)
+		if(this.props.queryId!=undefined){
+			var curIndex=parseInt(this.props.queryId)-1
+			if(curIndex==10){
+				curIndex=9
+			}
+		}else{
+			curIndex=0
+		}
+		
 		this.state = {
-		    curIndex:0,
+		    curIndex:curIndex,
 	        liLine: ["套西","单西","裤装","大衣","马甲","衬衫","箱包","个户","羊绒衫","家纺"]
 	    }
 	}
@@ -29,6 +38,10 @@ export default class TopLine extends Component{
 			case "家纺":TypeId="11";break;
 		}
 		this.props.onFatherLi({TypeId:TypeId})
+		if(this.props.queryId!=undefined){
+			window.location.hash="#/sort?TypeId="+TypeId
+		}
+		
 		localStorage.setItem("TypeId",TypeId);
 		this.setState({
 			curIndex:index
@@ -45,6 +58,7 @@ export default class TopLine extends Component{
 	}
 	
 	render(){
+		
 		return(
            <div className="topLine line_scroll">
            		<Scroller

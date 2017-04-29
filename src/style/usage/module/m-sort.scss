@@ -1,0 +1,144 @@
+.m-sort{
+    width:100%!important;
+    overflow: hidden;
+    @include flex();
+    .yo-scroller-c{
+        height:100%;
+        .topLine{
+            width:100%;
+            height:0.4rem;
+            background:#fff;
+            overflow:hidden;
+            @include border(0 0 1px 0,#eff0f4)
+            ul{
+                width:200%;
+                height:100%;
+                @include flexbox();
+                @include flex-direction(row);
+                padding:0 0.11rem;
+                li{
+                    width:0.7rem;
+                    @include flex();
+                    @include flexbox();
+                    @include flex-direction(column);
+                    .tupian{
+                        height:0.48rem;
+                        width:100%;
+                        @include flexbox();
+                        justify-content:center;
+                        padding-top:0.14rem;
+                        div{
+                            width:0.26rem;
+                            height:0.35rem;
+                            img{
+                                width:100%;
+                                height:100%;
+                            }
+                        }
+                        
+                    }
+                    span{
+                        @include flex(); 
+                        width:100%;  
+                        text-align: center; 
+                        margin-top:0.06rem;
+                        color:#d79944;
+                    }
+                }
+            }
+        }
+        .line_scroll{
+            height:0.4rem;
+            @include border(0 0 1px 0,#b0b0b0);
+            .yo-scroller-d{
+                width:100%;
+                li{
+                    span{
+                        margin-top:0!important;
+                        line-height: 0.4rem;
+                        i{
+                                display: block;
+                                width: 0.42rem;
+                                height: 0.38rem;
+                                margin-left:0.3rem;
+                        }
+                        .border_active{
+                            border-bottom: 0.02rem solid #e3ad17;
+                        }
+                    }
+                }
+            }
+        }
+        .products_type{
+            width:100%;
+            @include flexbox();
+            @include flex-direction(column);
+            ul{
+                width:100%;
+                @include flexbox();
+                @include flex-direction(row);
+                @include flex-wrap(wrap);
+                .item{
+                    background:#fff;
+                    width:49.6%;
+                    height:2.85rem;
+                    padding:0;
+                    margin-top:0.06rem;
+                    .pro_img_box{
+                        background:#fff;
+                        width:100%;
+                        height:2.78rem;
+                        @include flexbox();
+                        @include flex-direction(column);
+                        .product_img{
+                            margin-top: -0.05rem;
+                            width:100%;
+                            height: 2.06rem;;
+                            overflow: hidden;
+                            background:url(/img/default.png) no-repeat left top;
+                            background-size:cover;
+                            img{
+                                width:100%;
+                                height:auto;
+                            }
+                        }
+                        .product_intro{
+                            height:0.26rem;
+                            width:100%;
+                            font-size:0.11rem;
+                            color:#252525;
+                            line-height:0.26rem;
+                            @include flexbox();
+                            padding-left:0.16rem;
+                            @include ellipsis(null,1);
+                        }
+                        .product_sign{
+                            height:0.17rem;
+                            width:100%;
+                            font-size:0.09rem;
+                            color:#d8d8d8;
+                            @include flexbox();
+                            padding-left:0.13rem;
+                            @include ellipsis(null,1);
+        //                          line-height:0.17rem;
+                        }
+                        .product_price{
+                            height:0.24rem;
+                            width:100%;
+                            font-size:0.14rem;
+                            color:#d00001;
+                            @include flexbox();
+                            @include ellipsis(null,1);
+                            padding-left:0.13rem;
+                            line-height:0.24rem;
+                        }
+                    }
+                    
+                }
+                .item:nth-child(odd){
+                        margin-right:0.8%;
+                    }
+            }
+        }
+    }
+}

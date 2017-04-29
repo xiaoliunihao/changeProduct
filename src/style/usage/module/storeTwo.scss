@@ -1,0 +1,22 @@
+.product_tao{
+    width:100%;
+    background:#eff0f4;
+    @include flexbox();
+    @include flex-direction(column);
+    ul{
+        width:100%!important;
+        @include flex();
+        @include flexbox();
+        @include flex-direction(column);
+        li{
+            width:100%;
+            height:1.75rem;
+            overflow: hidden;
+            margin-bottom:0.08rem;
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+
+.login_container{
+    width:100%!important;
+    @include flex();
+    background:#e8e8ea url(http://www.fanjiangdz.com/weixin/newpublic/images/d_loginbg.png) no-repeat center top;
+    background-size:100% ;
+    .Login_img{
+    	
+    	img{
+    		display:block;
+    		width:1.37rem;
+    		height:1.38rem;
+    		margin:0 auto;
+    		margin-top:.75rem;
+    	}
+    }
+    .PeronMess{
+        width:2.7rem;
+        padding:0 .15rem;
+        margin:.2rem auto;
+        background:#fff;
+        border-radius:4px;
+        box-shadow:.01rem .03rem .02rem #c6c6c8;
+        .PhoneNum{
+            width:100%;
+            height:.41rem;
+            border:0 none;
+            border-bottom:1px solid #f99;
+        }
+        .Password{
+            width:100%;
+            height:.41rem;
+            border:0 none;
+        }
+
+    }
+     .Login_Mess{
+            width:2.7rem;
+            height:.41rem;
+            margin:0 auto;
+            .login{
+                width:100%;
+                height:100%;
+                background:#383a3c;
+                border:0 none;
+                color:#fff;
+                font-weight:400;
+            }
+             &.active{
+                    display:none;
+                }
+        }
+
+    .Registor_Mess{
+            .registor{
+                display:inline-block;
+                font-size:.10rem;
+                font-weight:normal;
+                @include border(0 0 1px 0,#383a3c);
+                position:relative;
+                left:2.2rem;
+                top:-.12rem;
+            }
+        }
+    .m-registor{
+        height:2rem;
+        text-align:center
+    }
+}

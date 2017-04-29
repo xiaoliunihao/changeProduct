@@ -1,0 +1,207 @@
+@import "../fragment/yo-header";
+.yo-scroller{
+    touch-action: none;
+}
+.yo-modal{
+    background-color:#fff!important;
+}
+.text{
+    display: block;
+}
+@font-face {
+  font-family: "yofont";
+  src: url("/iconfont/iconfont.woff") format("woff"),
+   url("/iconfont/iconfont.ttf") format("truetype"); 
+}
+@font-face {
+  font-family: "yofont";
+  src: url("/iconfont/iconfont1.woff") format("woff"),
+   url("/iconfont/iconfont1.ttf") format("truetype"); 
+}
+@include yo-header(
+    $bgcolor: dimgrey
+){
+    .yo-ico.regret{
+        font-size:0.20rem;
+        color:#fff;
+        span{
+            font-size:0.16rem;
+            position: relative;
+            top: -0.03rem;
+        }
+        &.hide{
+            display:none;
+        }
+    } 
+    .title{
+        font-weight: normal;
+    }
+}
+.tu_img_product{
+    height:6.04rem;
+}
+.title_tao{
+    height:0.55rem;
+    width:100%;
+    background:#fff;
+    @include flexbox();
+   
+    .title_header{
+         @include flex();
+         @include flexbox();
+          padding:0.16rem 0;
+          padding-right:0.1rem;
+          .title_left{
+              @include flex();
+              @include flexbox();
+              width:0.56rem;
+              height:100%;
+              padding-right:0.67rem;
+             .sign_img{
+                 @include flex();
+                 .img_tao{
+                     width:0.16rem;
+                     height:100%;
+                     overflow: hidden;
+                     float:right;
+                     img{
+                         width:100%;
+                         height:auto;
+                     }
+                 }
+             }
+             .sign_text{
+                 width:1.03rem;
+                 height:100%;
+                 text-align:center;
+                 line-height:0.23rem;
+                 font-size:0.16rem;
+             }
+          }
+          .right_btn{
+              width:0.56rem;
+              height:100%;
+              a{
+                  
+                  @include flexbox();
+                  div{
+                      @include flex();
+                      line-height:0.26rem;
+                      color:#666666;
+                      font-size:0.14rem;
+                  }
+              }
+          }
+    }
+}
+.footer{
+    width:100%;
+    height:0.48rem;
+    ul{
+        width:100%;
+        height:100%;
+        background:#ffffff;
+        @include flex-direction(row);
+        @include flexbox();
+        @include border(1px 0 0 0,#ccc);
+        li{
+            @include flex-direction(column);
+            @include flexbox();
+            @include flex();
+            text-align: center;
+            font-size:0.14rem;
+            line-height:0.22rem;
+            height:0.2rem;
+            color:#dedede;
+            a{
+                color:#dedede;
+                &.active{
+                    color:#e3b82e;
+                    i{
+                        color:#e3b82e;
+                    }
+                }
+            }
+            i{
+                color:#dedede;
+                display:block;
+                padding-top:0.04rem;
+                font-size:0.2rem;
+                &.active{
+                  color:#edcf75;  
+                }
+            }
+            &.active{
+              color:#edcf75;  
+            }
+            .make_img{
+                width: 0.56rem;
+                height: 0.56rem;
+                position: relative;
+                position: absolute;
+                top: -0.24rem;
+                z-index: 1000;
+                line-height: 0.45rem;
+                left: 0.1rem;
+                background: #fff;
+                font-size: 0.5rem;
+                text-align: center;
+                border-radius: 53%;
+                border-top: 1px solid #ccc;
+                color: #e3b82e;
+            }
+        }
+        .yuyue_img{
+            position:relative;
+            padding-top:0.28rem;
+        }
+    }
+}
+.product_list{
+    width:100%!important;
+    height:2.5rem;
+    @include flexbox();
+    padding:0.08rem 0.1rem;
+    .product_a{
+        @include flex();
+        @include flexbox();
+        height:100%;
+        @include flex-direction(column);
+        background:#fff;
+        .top_product{
+            width:100%;
+            overflow: hidden;
+            img{
+                width:100%;
+                height:auto;
+            }
+        }
+        .news_product{
+             @include flex();
+             width:100%;
+             padding:0 0.12rem;
+             h1{
+                 font-size:0.13rem;
+                 color:#5d5d5d;
+                 @include ellipsis(null,1);
+                 line-height:0.22rem;
+                 margin-top:0.06rem;
+             }
+             .sign_p{
+                 color:#6f6f6f;
+                 font-size:0.09rem;
+                 @include ellipsis(null,1);
+             }
+             .sign_price{
+                 color:#cd6b6c;
+                 line-height:0.28rem;
+             }
+        }
+    }
+    .product_a{
+        margin-right:0.07rem;
+    }
+    .product_a:nth-child(even){
+        margin-right:0;
+    }
+}   

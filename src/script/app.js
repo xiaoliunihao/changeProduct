@@ -10,6 +10,7 @@ import Brand from './component/brand/Brand'
 import Login from './component/login/Login'
 import Book_Success from './component/book/book_success'
 import StoreDetail from './component/storeDetail/StoreDetail'
+import Register from './component/login/register'
 ReactDom.render(
 	<Router history={hashHistory}>
 	    <Route path="/" component={Index}>
@@ -22,6 +23,7 @@ ReactDom.render(
 	    <Route path="/storeDetail" component={StoreDetail}></Route>
 		<Route path="/book_valume" component={BookValume} />
 		<Route path="/book_success" component={Book_Success} />
+		<Route path="/register" component={Register} />
 	</Router>
 	,
 	document.getElementById("root")

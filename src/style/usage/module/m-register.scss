@@ -1,0 +1,81 @@
+@import "../element/yo-btn.scss";
+@include yo-btn(
+    $width:100%,
+    $height:100%,
+    $font-size:0.16rem,
+    $color:#fff
+){
+    background:rgba(0,0,0,1);
+}
+.register{
+    width:100%;
+    height:100%;
+    @include flex-direction(column);
+    @include flexbox();
+    .regis_header{
+        width:100%;
+        height:0.44rem;
+        background:red;
+    }
+    .regis_content{
+        width:100%!important;
+        background: #e8e8ea;
+        @include flex();
+        .reg_box{
+            width:100%!important;
+            @include flex();
+            background:url(/img/d_loginbg.png) no-repeat left top;
+            background-size: 100% auto;
+            .Logo_img{
+                width:100%;
+                height: 3.0rem;
+                padding-top:1rem;
+                @include flexbox();
+                justify-content: center;
+                .logo_img_resign{
+                    width:1.8rem;
+                    height:100%;
+                    overflow: hidden;
+                    img{
+                        width:100%;
+                        height:auto;
+                    }
+                }
+            }
+            .input_box{
+                width:100%;
+                height: 1.3rem;
+                @include flexbox();
+                padding:0 0.4rem;
+                margin-top: 0.2rem;
+                @include flex-direction(column);
+                .input_tax{
+                    @include border-radius(5px);
+                    padding:0 0.2rem;
+                    height:100%;
+                    @include flexbox();
+                    background:#ffffff;
+                    @include flex-direction(column);
+                    input{
+                        @include flex();
+                        width:100%;
+                        border:0;
+                    }
+                    input:first-child{
+                        border-bottom:0.01rem solid #bfbfbf;
+                    }
+                    input:last-child{
+                        border-top:0.01rem solid #bfbfbf;
+                    }
+                }
+            }
+            .register_btn{
+                width:100%;
+                height:0.5rem;
+                margin-top:0.2rem;
+                @include flexbox();
+                padding:0 0.4rem;
+            }
+        }
+    }
+}

@@ -18,9 +18,11 @@ export default class Index extends Component{
 		return(
 			
 			<div className="index_container">
+				
 				<Header title={this.titleBindHtml(this.props.location.pathname)} isShowBack={false}/>
 				{this.props.children}
 				<Footer/>
+				
 			</div>
 		)
 	}

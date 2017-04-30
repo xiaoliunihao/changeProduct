@@ -18,7 +18,6 @@ export default class Content extends Component{
 		loading.show({
 			text:"小匠正在加载中..."
 		})
-		
 	}
 	render(){
 		return(

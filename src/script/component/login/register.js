@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import Header from "../commen/Header";
+import Toast from '../../../component_dev/toast/src'
 var titleName=""
 export default class Register extends Component{
 	titleBindHtml(list){
@@ -14,6 +15,37 @@ export default class Register extends Component{
 	}
 	backReturn(){
 		this.props.router.goBack()
+	}
+	resterBtn(){
+		let username = this.refs.username.value;
+		let password = this.refs.password.value;
+		let headers = new Headers({
+			'Content-Type': 'application/x-www-form-urlencoded'
+		})
+		fetch("/mylogin/users/registor", {
+			method: 'POST',
+			headers: headers,
+			body: `customername=${username}&password=${password}`
+		})
+		.then((response) => response.json())
+		.then(res => {
+			console.log(res)
+			if ((res.username)=='') {
+				this.refs.username.value="";
+				this.refs.password.value="";
+				Toast.show("该用户名已经存在！",2000);
+			} else {
+				if((res.register)=="ok"){
+					this.props.router.push("/login")
+				}else{
+					Toast.show("注册失败",2000);
+				}
+				
+			}
+		})
+		.catch(e => {
+			console.log(e)
+		})
 	}
 	render(){
 		return(
@@ -30,13 +62,13 @@ export default class Register extends Component{
 						</div>
 						<div className="input_box">
 							<div className="input_tax">
-								<input className="your_name" type="text" placeholder="请输入用户名" />
-							    <input className="your_password" type="password" placeholder="请输入密码" />
+								<input ref="username" className="your_name" type="text" placeholder="请输入用户名" />
+							    <input ref="password" className="your_password" type="password" placeholder="请输入密码" />
 							    <input className="your_confir_pass" type="password" placeholder="确认密码" />
 							</div>
 						</div>
 						<div className="register_btn">
-						    <input className="yo-btn register_button" value="注册" type="button"/>
+						    <input className="yo-btn register_button" onClick={this.resterBtn.bind(this)} value="注册" type="button"/>
 						</div>
 					</div>
 			   </div>

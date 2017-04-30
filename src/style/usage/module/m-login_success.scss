@@ -1,0 +1,184 @@
+.yo-scroller-list{
+    height:100%;
+    width:100%;
+}
+.login_success{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    .suc_header{
+        width:100%;
+        height:1.66rem;
+        background:url(/img/bj_02.png) no-repeat left top;
+        background-size: cover;
+        @include flexbox();
+        justify-content:center;
+        padding-top:0.16rem;
+        position:relative;
+        .wear_img{
+            width:0.84rem;
+            height:0.84rem;
+            @include flexbox();
+            padding-top:0.03rem;
+            justify-content:center;
+            background:#eaca65;
+            border-radius:0.42rem;
+            .center_img{
+                width:0.78rem;
+                height:0.78rem;
+                border-radius:0.39rem;
+                overflow: hidden;
+                img{
+                   width:100%;
+                   height:auto;
+                }
+               
+            }
+        }
+       .bot_line{
+            width:100%;
+            height:0.56rem;
+            position:absolute;
+            left:0;
+            bottom:0;
+            @include flexbox();
+            @include flex-direction(row);
+            background:rgba(256,256,256,0.2);
+            li{
+                @include flex();  
+                height:100%;
+            }
+            .per_name{
+               @include flexbox();
+               padding-left:0.6rem;
+               background:url(/img/person.png) no-repeat 0.3rem center;
+               background-size:0.2rem 0.25rem;
+               line-height:0.56rem;
+               color:#fff;
+               font-size:0.14rem;
+            }
+            .per_tel{
+                @include flexbox();
+                padding-left:1.3rem;
+                background:url(/img/person_phone.png) no-repeat 1rem center;
+                background-size:0.2rem 0.25rem;
+                line-height:0.56rem;
+                color:#fff;
+                font-size:0.14rem;
+            }
+        }
+    }
+    .all_list{
+        width:100%;
+        height:1.38rem;
+        background:#fff;
+        margin-top:0.06rem;
+        @include flexbox();
+        @include flex-direction(column);
+        .all_title{
+            width:100%;
+            height:0.53rem;
+            padding:0 0.1rem;
+            @include flexbox();
+  
+            .title_left{
+                width: 0.2rem;
+                height: 0.3rem;
+                overflow:hidden;
+                margin-top:0.15rem;
+                margin-left:0.1rem;
+                img{
+                   width:100%;
+                   height:auto;
+                }
+            }
+            .list_txt{
+               @include flex();
+               @include flexbox();
+               padding-left:0.1rem;
+               height:100%;
+               line-height:0.53rem;
+               color:#232323;
+               font-size:0.16rem;
+            }
+            .all_right{
+                    width: 0.24rem;
+                    height: 0.28rem;
+                    font-size: 0.22rem;
+                    overflow: hidden;
+                    margin-top: 0.10rem;
+                img{
+                   width:100%;
+                   height:auto;
+                }
+            }
+        }
+        .all_row{
+            width:100%!important;
+            @include flex();
+            @include flexbox();
+            justify-content:center;
+            .all_row_list{
+                border-top:0.01rem solid #e5e5e5;
+                width:3.75rem;
+                height:100%;
+                @include flexbox();
+                justify-content:center;
+                @include flex-direction(row);
+                .content_have{
+                    @include flex();
+                    height:100%;
+                    .no_pay{
+                        width:0.16rem;
+                        height:0.17rem;
+                        overflow:hidden;
+                        margin-top:0.23rem;
+                        margin-left:0.37rem;
+                        img{
+                          width:100%;
+                          height:auto;
+                        }
+                    }
+                    .ok_make{
+                        width:100%;
+                        height:0.31rem;
+                        text-align: center;
+                        line-height:0.31rem;
+                        font-size:0.14rem;
+                        color:#333333;
+                        margin-top: 0.05rem;
+                    }
+                }
+                .border_short{
+                   margin-top:0.4rem;
+                   width:0.01rem;
+                   height:0.18rem;
+                   background:#e5e5e5;
+                }
+            }
+        }
+    }
+    .orderList{
+        width:100%;
+        background:#fff;
+        margin-top:0.06rem;
+        height:3.78rem;
+        li{
+            width:100%;
+            height:0.54rem;
+            @include flexbox();
+            padding-left: 0.46rem;
+            background:url(/img/moneyZhi.png) no-repeat 0.15rem center;
+            background-size:0.18rem 0.15rem;
+            line-height:0.54rem;
+            font-size:0.15rem;
+            border-bottom:0.01rem solid #e5e5e5;
+            .coupon{
+                width:3.3rem;
+            }
+            .yo-ico{
+               font-weight:bold;
+            }
+        }
+    }
+}

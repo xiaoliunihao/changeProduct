@@ -15,33 +15,6 @@ export default class Login extends Component{
 			text:"小匠正在加载中..."
 		})
 	}
-	submit() {
-		let username = this.refs.username1.value;
-		let password = this.refs.password1.value;
-		this.setState({Popup :false});
-		let headers = new Headers({
-			'Content-Type': 'application/x-www-form-urlencoded'
-		})
-		fetch("/mylogin/users/registor", {
-			method: 'POST',
-			headers: headers,
-			body: `username=${username}&password=${password}`
-		})
-		.then((response) => response.json())
-			.then(res => {
-				if (res.username) {
-				Toast.show("恭喜注册成功！",2000);
-				this.refs.username1.value="";
-				this.refs.password1.value="";
-				} else {
-					Toast.show("用户名已存在","2000");
-				}
-			})
-			.catch(e => {
-				console.log(e)
-			})
-	}
-
 	loginForm(){
 		let username = this.refs.username.value;
 		let password = this.refs.password.value;
@@ -50,20 +23,21 @@ export default class Login extends Component{
 			'Content-Type': 'application/x-www-form-urlencoded'
 		})
 
-		fetch("/mylogin/users/login", {
+		fetch("/mylogin/users/reload", {
 			method: 'POST',
 			headers: headers,
-			body: `username=${username}&password=${password}`
+			body: `customername=${username}&password=${password}`
 		})
 		.then((response) => response.json())
 		.then(res => {
 			console.log(res)
-			if ((res.username)!='') {
-				console.log(res.username);
-				localStorage.setItem( "username",username)
+			if (res.load=="ok") {
+				localStorage.setItem("username",username);
+				localStorage.setItem("password",password)
 				this.refs.username.value="";
 				this.refs.password.value="";
-				Toast.show("登录成功！",2000);
+				Toast.show("登录成功！",1000);
+				console.log(this.props.router.push("/login_success"))
 			} else {
 				Toast.show("此账号不存在!",2000);
 			}

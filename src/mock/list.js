@@ -3,12 +3,14 @@ var dayi_img_src=require("./dayi.json")
 var index=require("./index.json")
 var index_banner=require("./index_banner.json")
 var province=require("./province.json")
+var login_list=require("./login_list.json")
 module.exports=function(){
 	return {
 		"tao_img_src":tao_img_src,
 		"dayi_img_src":dayi_img_src,
 		"index":index,
 		"index_banner":index_banner,
-		"province":province
+		"province":province,
+		"login_list":login_list
 	}
 }

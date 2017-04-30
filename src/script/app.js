@@ -11,6 +11,7 @@ import Login from './component/login/Login'
 import Book_Success from './component/book/book_success'
 import StoreDetail from './component/storeDetail/StoreDetail'
 import Register from './component/login/register'
+import LoginSuccess from './component/login/LoginSuccess'
 ReactDom.render(
 	<Router history={hashHistory}>
 	    <Route path="/" component={Index}>
@@ -19,6 +20,7 @@ ReactDom.render(
 	      <Route path="sort" component={Sort} />
 	      <Route path="brand" component={Brand} />
 	      <Route path="login" component={Login} />
+	      <Route path="login_success" component={LoginSuccess} />
 	    </Route>
 	    <Route path="/storeDetail" component={StoreDetail}></Route>
 		<Route path="/book_valume" component={BookValume} />

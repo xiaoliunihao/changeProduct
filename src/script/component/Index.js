@@ -11,6 +11,7 @@ export default class Index extends Component{
 			case "/book_valume":titleName="定制生活---预约页";break;
 			case "/brand":titleName="定制生活---面料页";break;
 			case "/login":titleName="定制生活---登录页";break;
+			case "/login_success":titleName="定制生活---个人页";break;
 		}
 		return titleName;
 	}

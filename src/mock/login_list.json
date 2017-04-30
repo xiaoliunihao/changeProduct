@@ -1,0 +1,33 @@
+{
+	"list":[
+	    {
+	      "name":"我的优惠券",
+	      "src":"/img/moneyZhi.png"
+	    }
+	    ,
+	    {
+	      "name":"我的推荐",
+	       "src":"/img/tuijianyouli.png"
+	    },
+	    {
+	      "name":"收货地址",
+	       "src":"/img/getAddressImg.png"
+	    },
+	    {
+	      "name":"量体数据",
+	       "src":"/img/ltsj.png"
+	    },
+	    {
+	      "name":"我的客服",
+	       "src":"/img/mineConnect.png"
+	    },
+	    {
+	      "name":"保养手册",
+	       "src":"/img/makeMyselef.png"
+	    },
+	    {
+	      "name":"修改密码",
+	       "src":"/img/changePass.png"
+	    }
+	]
+}

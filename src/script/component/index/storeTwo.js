@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import PubHeader from "../commen/PubHeader";
+import {Link} from "react-router";
 export default class StoreTwo extends Component{
 	constructor(props){
 		super(props)
@@ -11,7 +12,9 @@ export default class StoreTwo extends Component{
 		return list.map((value,index)=>{
 			return(
 				<li>
-					<img src={value} alt="" />
+					<Link to={"/storeDetail?id="+value.id}>
+						<img src={value.srclink} alt="" />
+					</Link>
 				</li>
 			)
 		})
@@ -27,7 +30,7 @@ export default class StoreTwo extends Component{
 		)
 	}
 	componentDidMount(){
-		fetch("http://localhost:3000/"+this.props.uri)
+		fetch("http://10.17.152.161:3000/"+this.props.uri)
 		.then((response)=>response.json())
 		.then((res)=>{
 			this.setState({

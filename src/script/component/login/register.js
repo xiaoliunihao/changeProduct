@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import Header from "../commen/Header";
 import Toast from '../../../component_dev/toast/src'
+import Loading,{loading} from '../../../component_dev/loading/src'
 var titleName=""
 export default class Register extends Component{
 	titleBindHtml(list){
@@ -47,6 +48,11 @@ export default class Register extends Component{
 			console.log(e)
 		})
 	}
+	componentWillMount(){
+		loading.show({
+			text:"小匠正在加载中..."
+		})
+	}
 	render(){
 		return(
 			<div className="register">
@@ -74,5 +80,10 @@ export default class Register extends Component{
 			   </div>
 			</div>
 		)
+	}
+	componentDidMount(){
+		setTimeout(function(){
+			loading.hide()
+		},1000)
 	}
 }

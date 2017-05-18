@@ -16,11 +16,11 @@ module.exports={
 
 	devServer:{
 		contentBase:"./build",
-		host:"localhost",
+		host:"10.17.152.161",
 		port:7000,
 		proxy:{
 			"/indexList/":{
-				target:"http://localhost:3000",
+				target:"http://10.17.152.161:3000",
 				changeOrigin:true,
 				pathRewrite:{
 					"^/indexList":''

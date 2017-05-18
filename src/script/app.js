@@ -12,6 +12,14 @@ import Book_Success from './component/book/book_success'
 import StoreDetail from './component/storeDetail/StoreDetail'
 import Register from './component/login/register'
 import LoginSuccess from './component/login/LoginSuccess'
+import AllList from './component/allBookList/AllList'
+import Reduce from './component/reduce/Reduce'
+import Address from './component/address/Address'
+import ChangePass from './component/changePass/ChangePass'
+import DataBody from './component/dataBody/DataBody'
+import HiCustom from './component/hiCustom/HiCustom'
+import MakeGood from './component/makeGood/MakeGood'
+import MyEnter from './component/myEnter/MyEnter'
 ReactDom.render(
 	<Router history={hashHistory}>
 	    <Route path="/" component={Index}>
@@ -26,6 +34,14 @@ ReactDom.render(
 		<Route path="/book_valume" component={BookValume} />
 		<Route path="/book_success" component={Book_Success} />
 		<Route path="/register" component={Register} />
+		<Route path="/allList" component={AllList} />
+		<Route path="/reduce" component={Reduce} />
+		<Route path="/myEnter" component={MyEnter} />
+		<Route path="/address" component={Address} />
+		<Route path="/dataBody" component={DataBody} />
+		<Route path="/hiCustom" component={HiCustom} />
+		<Route path="/makeGood" component={MakeGood} />
+		<Route path="/changePass" component={ChangePass} />
 	</Router>
 	,
 	document.getElementById("root")

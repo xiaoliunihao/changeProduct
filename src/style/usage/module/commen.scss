@@ -6,9 +6,7 @@
     background-color:#fff!important;
 }
 .yo-modal{
-//  background-color:rgba(105,105,105,0.5) !important;
     .cont{
-//              background:#e8e8ea !important;
                  .mo-user{
                     display:block;
                    height:.31rem;
@@ -203,34 +201,39 @@
         height:100%;
         @include flex-direction(column);
         background:#fff;
-        .top_product{
-            width:100%;
-            overflow: hidden;
-            img{
+        a{
+            display:block;
+            @include flexbox();
+            @include flex-direction(column);
+            .top_product{
                 width:100%;
-                height:auto;
+                overflow: hidden;
+                img{
+                    width:100%;
+                    height:auto;
+                }
             }
-        }
-        .news_product{
-             @include flex();
-             width:100%;
-             padding:0 0.12rem;
-             h1{
-                 font-size:0.13rem;
-                 color:#5d5d5d;
-                 @include ellipsis(null,1);
-                 line-height:0.22rem;
-                 margin-top:0.06rem;
-             }
-             .sign_p{
-                 color:#6f6f6f;
-                 font-size:0.09rem;
-                 @include ellipsis(null,1);
-             }
-             .sign_price{
-                 color:#cd6b6c;
-                 line-height:0.28rem;
-             }
+            .news_product{
+                 @include flex();
+                 width:100%;
+                 padding:0 0.12rem;
+                 h1{
+                     font-size:0.13rem;
+                     color:#5d5d5d;
+                     @include ellipsis(null,1);
+                     line-height:0.22rem;
+                     margin-top:0.06rem;
+                 }
+                 .sign_p{
+                     color:#6f6f6f;
+                     font-size:0.09rem;
+                     @include ellipsis(null,1);
+                 }
+                 .sign_price{
+                     color:#cd6b6c;
+                     line-height:0.28rem;
+                 }
+            }
         }
     }
     .product_a{
@@ -240,3 +243,138 @@
         margin-right:0;
     }
 }   
+%custom_class_title{
+    @include flexbox();
+    @include flex-direction(row);
+    padding-left:0.6rem;
+    width:100%;
+    height:0.45rem;
+    background:#fff url(/img/noncustomclass.png) no-repeat 0.2rem center;
+    background-size: 0.25rem 0.25rem;
+    .span_class{
+        @include flex();
+        height:100%;
+        line-height:0.45rem;
+        color:#000;
+        font-size: 0.16rem;
+    }
+    .down_list{
+        width:0.6rem;
+        height:100%;
+        background:url(/img/selectDown.png) no-repeat center center;
+        background-size: 0.2rem 0.1rem;
+    }
+}
+%list_content_header{
+    width:100%;
+    .list_content_header{
+        width:100%;
+        height:0.38rem;
+        margin-top:0.05rem;
+        @include flexbox();
+        @include flex-direction(row);
+        li{
+            @include flex();
+            @include flexbox();
+            height:100%!important;
+            background:#fff;
+            justify-content: center;                        
+            span{
+                @include flexbox();
+                padding-top:0.1rem;
+                padding-left:0.05rem;
+                height:100%;
+                text-align:center;
+            }
+            .spanactive{
+                border-bottom:0.03rem solid #c6a241;
+                color:#c6a241;
+            }
+        }
+        
+    }
+    .list_detail{
+        width:100%;
+        margin-top:0.05rem;
+        @include flexbox();
+        @include flex-direction(column);
+        .list_detail_header{
+            width:100%;
+            height:0.33rem;
+            @include flexbox();
+            background:#fff;
+            .list_ordernumber{
+                width:0.8rem;
+                padding-left: 0.1rem;
+                height:100%;
+                text-align: center;
+                line-height:0.33rem;
+                font-size: 0.13rem;
+            }
+            .list_number{
+                @include flex();
+                line-height:0.33rem;
+                font-size: 0.13rem;
+            }
+            .list_as{
+                width:1rem;
+                height:100%;
+                text-align: center;
+                line-height:0.33rem;
+                color:#e2ab1a;
+                font-weight:bold;
+                font-size: 0.13rem;
+            }
+        }
+        .list_detail_content{
+            width:100%;
+            height: 0.88rem;
+            background:#fff;
+            .list_line{
+                width:100%;
+                height:0.34rem;
+                @include flexbox();
+                @include flex-direction(row);
+                .list_line_name{
+                    width:0.8rem;
+                    height:100%;
+                    @include flexbox();
+                    padding-left:0.2rem;
+                    line-height:0.34rem;
+                }
+                .list_line_tel{
+                    @include flex();
+                    height:100%;
+                    text-align: right;
+                    padding-right: 0.25rem;
+                    line-height:0.34rem;
+                }
+            }
+            .detail_address{
+                width:100%;
+                height:0.26rem;
+                line-height:0.26rem;
+                @include flexbox();
+                padding-left:0.2rem;
+                font-size: 0.14rem;
+            }
+            .order_time{
+                width:100%;
+                height:0.28rem;
+                @include flexbox();
+                @include flex-direction(row);
+                .order_time_left{
+                    width: 0.9rem;
+                    height:100%;
+                    line-height:0.28rem;
+                    padding-left: 0.2rem;
+                }
+                .order_time_right{
+                    height:100%;
+                    line-height:0.28rem;
+                    @include flexbox();
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import Loading,{loading} from '../../../component_dev/loading/src'
+import {Link} from "react-router";
 export default class Login_List extends Component{
 	constructor(props){
 		super(props)
@@ -10,10 +11,12 @@ export default class Login_List extends Component{
 	login_list(list){
 		return list.length>0?list.map((value,index)=>{
 			return(
-				<li style={{background:'url('+value.src+') no-repeat 0.15rem center',backgroundSize:"0.18rem 0.15rem"}}>
-					<span className="coupon">{value.name}</span>
-					<span className="yo-ico">&#xf0343;</span>
-				</li>
+				<Link to={value.to}>
+					<li style={{background:'url('+value.src+') no-repeat 0.15rem center',backgroundSize:"0.18rem 0.15rem"}}>
+						<span className="coupon">{value.name}</span>
+						<span className="yo-ico">&#xf0343;</span>
+					</li>
+				</Link>
 			)
 		}):[<div />];
 	}

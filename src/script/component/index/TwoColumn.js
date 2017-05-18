@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import PubHeader from "../commen/PubHeader";
+import {Link} from "react-router";
 export default class TwoColumn extends Component{
 	constructor(props){
 		super(props)
@@ -11,14 +12,16 @@ export default class TwoColumn extends Component{
 		return list.map((value,index)=>{
 			return(
 				<div className="product_a">
-					<div className="top_product">
-						<img src={"http://www.fanjiangdz.com/image/"+value.filepath} />
-					</div>
-					<div className="news_product">
-						<h1>{value.name}{value.categoryPLName}</h1>
-						<p className="sign_p">{value.manufacturer}</p>
-						<p className="sign_price">{value.price}</p>
-					</div>
+					<Link to={"/storeDetail?id="+value.id}>
+						<div className="top_product">
+							<img src={"http://www.fanjiangdz.com/image/"+value.filepath} />
+						</div>
+						<div className="news_product">
+							<h1>{value.name}{value.categoryPLName}</h1>
+							<p className="sign_p">{value.manufacturer}</p>
+							<p className="sign_price">{value.price}</p>
+						</div>
+					</Link>
 				</div>
 			)
 		})

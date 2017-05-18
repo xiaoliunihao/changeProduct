@@ -1,0 +1,133 @@
+.yo-scroller-alllist{
+    height:100%;
+}
+.makeListExample{
+    height:1.22rem;
+}
+.makeListExample1{
+    height:1.56rem;
+}
+.allList{
+    width:100%;
+    height:100%;
+    @include flexbox();
+    @include flex-direction(column);
+    
+    .all_header{
+        width:100%;
+        height:0.44rem;
+        background:red;
+    }
+    .custom_class{
+        overflow: hidden;
+        width:100%!important;
+        @include flex();
+        .custom_class_title{
+            @extend %custom_class_title;
+        }
+        .down_container{
+            width:100%;
+            //消失和出现
+            &.arise{
+                display:block;
+            }
+            &.hide{
+                display:none;
+            }
+            .down_list_content{
+                @extend %list_content_header
+            }
+        }
+    }
+    .no_custom_class{
+        width:100%;
+        margin-top: 0.1rem;
+        .custom_class_title{
+            @extend %custom_class_title;
+        }
+        .Nocustom_class_title{
+            background:#fff url(/img/customclass1.jpg) no-repeat 0.2rem center;
+            background-size: 0.25rem 0.25rem;
+            
+        }
+      .down_container{
+          //下边订单列表消失
+            width:100%;
+            &.arise{
+                display:block;
+            }
+            &.hide{
+                display:none;
+            }
+            .down_list_content{
+                @extend %list_content_header;
+                .wait_content_header{
+                    li{
+                        padding-left:0.3rem;
+                        justify-content: left;
+                        .wait_pay{
+                            width:0.6rem;
+                        }
+                    }
+                    li:nth-child(2){
+                        @include flexbox();
+                        padding-left:2.2rem;
+                        .wait_pay{
+                            width:0.6rem;
+                        }
+                    }
+                }
+                .no_resign{
+                    width:100%;
+                    .list_paygo{
+                        width:100%;
+                        height:0.33rem;
+                        background:#fff;
+                        @include flexbox();
+                        margin-top:0.02rem;
+                        @include flex-direction(row);
+                        .list_paygo_left{
+                            @include flex();
+                            height:100%;
+                            @include flexbox();
+                            color:#e0ac18;
+                            font-size: 0.13rem;
+                            .list_paygo_moneyTxt{
+                               width:0.8rem; 
+                               height:100%;
+                               text-align: center;
+                               line-height:0.33rem;
+                               padding-left: 0.2rem;
+                            }
+                            .list_paygo_money{ 
+                               height:100%;
+                               @include flex();
+                               line-height:0.33rem;
+                            }
+                        }
+                        .list_paygo_right{
+                            @include flex();
+                            height:100%;
+                            padding-left:0.8rem;
+                            @include flexbox();
+                            padding-top: 0.07rem;
+                            span{
+                                width:0.66rem;
+                                height:0.2rem;
+                                display: block;
+                                float:left;
+                                margin-left:0.1rem;
+                                font-size: 0.12rem;
+                                text-align: center;
+                                padding-left: 0.08rem;
+                                @include flexbox();
+                                @include border-radius(3px)
+                                border:0.01rem solid #999999;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

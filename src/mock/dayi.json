@@ -1,7 +1,7 @@
 {
 	"src":[
-	    "/img/bigFirstWest.jpg",
-	    "/img/bigSecondWest.jpg",
-	    "/img/bigThirdWest.jpg"
+	    {"srclink":"/img/bigFirstWest.jpg","id":63247},
+	    {"srclink":"/img/bigSecondWest.jpg","id":63127},
+	    {"srclink":"/img/bigThirdWest.jpg","id":45245}
 	]
 }
